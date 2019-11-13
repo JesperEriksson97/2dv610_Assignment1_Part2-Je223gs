@@ -18,9 +18,8 @@ class Dice_tests {
 
 	private model.Dice testDice;
 	
-	@Before
-	public void setUp() {
-		testDice = mock(model.Dice.class);
+	public Dice_tests() {
+		this.testDice = new model.Dice();
 	}
 	
 	@Test
@@ -30,7 +29,7 @@ class Dice_tests {
 	
 	public void testIfDiceRolls() {
 		testDice.roll();
-		assertTrue(testDice.getVal() != null);
+		assertTrue(testDice.getVal() != 0);
 	}
 	
 	@Test
