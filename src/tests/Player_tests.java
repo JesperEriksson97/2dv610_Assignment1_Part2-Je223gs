@@ -16,32 +16,13 @@ class Player_tests {
 	
 	@Before
 	public void setUp() {
-		dice_1 = Mockito.mock(model.Dice.class);
-		dice_2 = Mockito.mock(model.Dice.class);
+
 	}
 	
 	@Test
 	public void testIfPlayerCanRoll() {
 		player.rollDices();
-		assertTrue(player.getDiceValues() != 0);
+		assertTrue(player.getDiceValues() > 1 && player.getDiceValues() < 13);
 	}
-	
-	@Test
-	public void testIfPlayerCanWinWithSeven() {
-		doReturn(3).when(dice_1).getVal();
-		doReturn(4).when(dice_2).getVal();
-		
-		assertTrue(player.isSeven(dice_1.getVal(), dice_2.getVal()));
-	}
-	
-	@Test
-	public void testIfPlayerCanWinWithDoubles() {
-		doReturn(3).when(dice_1).getVal();
-		doReturn(3).when(dice_2).getVal();
-		
-		assertTrue(player.isDoubles(dice_1.getVal(), dice_2.getVal()));
-	}
-	
-	
 
 }
