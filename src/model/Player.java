@@ -18,4 +18,12 @@ public class Player {
 	public int getDiceValues() {
 		return dice_1.getVal() + dice_2.getVal();
 	}
+	
+	public int getDice1Val() {
+		return dice_1.getVal();
+	}
+	
+	public int getDice2Val() {
+		return dice_1.getVal();
+	}
 }

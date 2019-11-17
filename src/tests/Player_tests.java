@@ -19,6 +19,10 @@ class Player_tests {
 
 	}
 	
+	/**
+	 * checking wheter the dice values changes when rolled. 
+	 */
+	
 	@Test
 	public void testIfPlayerCanRoll() {
 		player.rollDices();
