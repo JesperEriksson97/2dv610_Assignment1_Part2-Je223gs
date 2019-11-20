@@ -5,21 +5,16 @@ import static org.junit.Assert.*;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
-import java.io.OutputStream;
 import java.io.PrintStream;
 import java.util.Scanner;
 
 import org.junit.*;
-import org.mockito.*;
-import org.mockito.Mockito.*;
 
 public class View_test {
 
 	private view.IView view_1;
-	private model.Player player_1;
-	private model.Game game_1;
 	
-	// System readings
+	// Streams set up
 	private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 	private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
 	private final ByteArrayInputStream inContent = new ByteArrayInputStream("p".getBytes());
@@ -29,8 +24,6 @@ public class View_test {
 	
 	@Before
 	public void setUp() {
-		player_1 = Mockito.mock(model.Player.class);
-		game_1 = Mockito.mock(model.Game.class);
 		view_1 = new view.EnglishView();
 		
 		System.setOut(new PrintStream(outContent));
@@ -43,7 +36,7 @@ public class View_test {
 	@Test
 	public void shouldReturnCorrectWelcomeMessage() {
 		view_1.printWelcomeMessage();
-		assertEquals("Welcome to my Dice Game", outContent.toString());
+		assertEquals("Welcome to my Dice Game! p to play, q to quit", outContent.toString());
 	}
 	
 	/**
@@ -61,7 +54,7 @@ public class View_test {
 	@Test
 	public void shouldReturnCorrectLoseMessage() {
 		view_1.printResult(false);
-		assertEquals("You lost! try again...", outContent.toString());
+		assertEquals("You lost! Try again...", outContent.toString());
 	}
 	
 	/**
@@ -74,15 +67,17 @@ public class View_test {
 	}
 	
 	/**
-	 * Reseting streams so that we can run tests multiple times
+	 * Tests if getUserInput() actually returns the user input given
 	 */
-	
 	@Test
 	public void shouldReturnCorrectUserInput() {
 		EnglishViewStub viewStub = new EnglishViewStub();
 		assertEquals("p" , viewStub.getUserInput(inContent));
 	}
 	
+	/**
+	 * Restoring streams
+	 */
 	@After
 	public void restoreStreams() {
 		System.setOut(originalOut);
@@ -93,24 +88,26 @@ public class View_test {
 
 /**
  * Stub class to test that the view can handle user inputs
- 
+ */
 
 class EnglishViewStub implements view.IView {
 
-	// Creating a different version of getUserInput to be able to
-	// "fake" user input by managing my own InputStream
+	// Creating a replica with code from the "correct" implementation with the exception
+	// that getUserInput takes an InputStream as a argument.
+	// This allows us to test user input by "faking" input and then see if the function can
+	// handle it as intended.
+	
 	public String getUserInput(InputStream in) {
-		Scanner userKeyboard = new Scanner(in);
-		String input = userKeyboard.nextLine();
-		userKeyboard.close();
+		Scanner inKeyboard = new Scanner(in);
+		String input = inKeyboard.nextLine();
+		inKeyboard.close();
 		
 		return input;
 	}
 	
 	public void printWelcomeMessage() {}
-	public void printGoodByeMessage() {	}
-	public void printResult(boolean b) {	}
+	public void printGoodByeMessage() {}
+	public void printResult(boolean b) {}
 	public String getUserInput() {return null;}
 	
 }
-*/
