@@ -3,30 +3,43 @@ package tests;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.Before;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
-import org.mockito.junit.MockitoRule;
+
+import model.Dice;
+
 import static org.mockito.Mockito.*;
 
 class Player_tests {
 
-	private model.Dice dice_1;
-	private model.Dice dice_2;
-	private model.Player player = new model.Player();
+	private model.Player player;
+	private model.Dice mockDice_1;
+	private model.Dice mockDice_2;
 	
-	@Before
+	/**
+	 * Using mocked Dices because 
+	 */
+	@BeforeEach
 	public void setUp() {
-
+		mockDice_1 = Mockito.mock(model.Dice.class);
+		mockDice_2 = Mockito.mock(model.Dice.class);
+		player = new model.Player(mockDice_1, mockDice_2);
 	}
 	
 	/**
-	 * checking wheter the dice values changes when rolled. 
+	 * checking if the dice values changes when rolled. 
 	 */
 	
 	@Test
-	public void testIfPlayerCanRoll() {
+	public void verifiesThatDicesAreBeingRolled() {
+		
 		player.rollDices();
-		assertTrue(player.getDiceValues() > 1 && player.getDiceValues() < 13);
+		
+		Mockito.verify(mockDice_1, times(1)).roll();
+		Mockito.verify(mockDice_2, times(1)).roll();
+		
 	}
+	
 
 }

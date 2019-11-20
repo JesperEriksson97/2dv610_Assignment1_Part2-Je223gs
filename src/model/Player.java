@@ -5,9 +5,9 @@ public class Player {
 	private Dice dice_1;
 	private Dice dice_2;
 	
-	public Player() {
-		dice_1 = new Dice();
-		dice_2 = new Dice();
+	public Player(Dice dice_1, Dice dice_2) {
+		this.dice_1 = dice_1;
+		this.dice_2 = dice_2;
 	}
 	
 	public void rollDices() {
