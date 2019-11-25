@@ -31,5 +31,13 @@ public class Game {
 	public int getPlayerDiceValues() {
 		return player.getDiceValues();
 	}
+
+	public int getPlayerDice1Value() {
+		return player.getDice1Val();
+	}
+
+	public int getPlayerDice2Value() {
+		return player.getDice2Val();
+	}
 	
 }

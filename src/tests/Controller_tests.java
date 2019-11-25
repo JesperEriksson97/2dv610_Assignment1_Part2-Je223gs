@@ -2,9 +2,9 @@ package tests;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
 import org.mockito.Mockito;
 
-import org.junit.jupiter.api.BeforeEach;
 import static org.mockito.Mockito.*;
 
 public class Controller_tests {
@@ -71,7 +71,6 @@ public class Controller_tests {
 		Mockito.verify(view_1, times(1)).getUserInput();
 		
 		Mockito.verify(game_1, times(1)).playerRollDices();
-		Mockito.verify(game_1, times(1)).getPlayerDiceValues();
 		Mockito.verify(game_1, times(1)).playerWinsSeven();
 		
 		Mockito.verify(view_1, times(1)).printResult(game_1.playerWinsSeven());
@@ -99,7 +98,6 @@ public class Controller_tests {
 		Mockito.verify(view_1, times(1)).getUserInput();
 		
 		Mockito.verify(game_1, times(1)).playerRollDices();
-		Mockito.verify(game_1, times(1)).getPlayerDiceValues();
 		Mockito.verify(game_1, times(1)).playerWinsSeven();
 		Mockito.verify(game_1, times(1)).playerWinsDoubles();
 		
@@ -128,7 +126,6 @@ public class Controller_tests {
 		Mockito.verify(view_1, times(1)).getUserInput();
 		
 		Mockito.verify(game_1, times(1)).playerRollDices();
-		Mockito.verify(game_1, times(1)).getPlayerDiceValues();
 		Mockito.verify(game_1, times(1)).playerWinsSeven();
 		Mockito.verify(game_1, times(1)).playerWinsDoubles();
 		
