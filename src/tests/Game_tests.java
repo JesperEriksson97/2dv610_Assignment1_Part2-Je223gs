@@ -3,6 +3,7 @@ package tests;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.times;
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
@@ -49,12 +50,10 @@ public class Game_tests {
 	 */
 	@Test
 	public void rollDicesShouldReturnTwelve() {
-		Mockito.when(player_1.getDiceValues()).thenReturn(12);
+		Mockito.when(player_1.getDiceValues()).thenReturn(12); // making sure that getDiceValues is actually being called
 		game_1.playerRollDices();
 		
-		assertEquals(12, game_1.getPlayerDiceValues());
-		Mockito.verify(player_1, times(1)).rollDices();
-		
+		Assert.assertEquals(12, game_1.getPlayerDiceValues());	
 	}
 	
 
