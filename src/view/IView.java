@@ -6,4 +6,6 @@ public interface IView {
 	void printWelcomeMessage();
 	void printGoodByeMessage();
 	void printResult(boolean b);
+	String getPlayButton();
+	String getQuitButton();
 }

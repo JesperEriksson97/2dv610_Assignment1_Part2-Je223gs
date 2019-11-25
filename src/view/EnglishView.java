@@ -4,6 +4,10 @@ import java.util.Scanner;
 
 public class EnglishView implements IView {
 
+	
+	String playButton = "p";
+	String quitButton = "q";
+	
 	public String getUserInput() {
 		Scanner inKeyboard = new Scanner(System.in);
 		String input = inKeyboard.nextLine();
@@ -12,7 +16,7 @@ public class EnglishView implements IView {
 	}
 
 	public void printWelcomeMessage() {
-		System.out.print("Welcome to my Dice Game! p to play, q to quit");
+		System.out.print("Welcome to my Dice Game! " + playButton + " to play, " + quitButton + " to quit");
 	}
 
 	public void printGoodByeMessage() {
@@ -25,6 +29,14 @@ public class EnglishView implements IView {
 		} else {
 			System.out.print("You lost! Try again...");
 		}
+	}
+
+	public String getPlayButton() {
+		return playButton;
+	}
+
+	public String getQuitButton() {
+		return quitButton;
 	}
 
 }

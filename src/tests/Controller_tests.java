@@ -61,18 +61,13 @@ public class Controller_tests {
 	@Test
 	public void shouldPlayGameWinningOnSeven() {
 		
-		Mockito.when(view_1.getUserInput()).thenReturn("p");
-		Mockito.when(game_1.getPlayerDiceValues()).thenReturn(7);
+		mockWhenUserInput();
+		Mockito.when(view_1.getPlayButton()).thenReturn("p");
+		Mockito.when(view_1.getQuitButton()).thenReturn("q");
 		
 		pc_1.playGame();
 		
-
-		Mockito.verify(view_1, times(1)).printWelcomeMessage();
-		Mockito.verify(view_1, times(1)).getUserInput();
-		
-		Mockito.verify(game_1, times(1)).playerRollDices();
-		Mockito.verify(game_1, times(1)).playerWinsSeven();
-		
+		checkVerifies();
 		Mockito.verify(view_1, times(1)).printResult(game_1.playerWinsSeven());
 		
 		
@@ -86,21 +81,16 @@ public class Controller_tests {
 	@Test
 	public void shouldPlayGameWinningOnDoubles() {
 		
-		Mockito.when(view_1.getUserInput()).thenReturn("p");
-		Mockito.when(game_1.getPlayerDiceValues()).thenReturn(7);
+		mockWhenUserInput();
+		Mockito.when(view_1.getPlayButton()).thenReturn("p");
+		Mockito.when(view_1.getQuitButton()).thenReturn("q");
 		Mockito.when(game_1.getPlayerDice1Value()).thenReturn(3);
 		Mockito.when(game_1.getPlayerDice2Value()).thenReturn(3);
 		
 		pc_1.playGame();
-		
-
-		Mockito.verify(view_1, times(1)).printWelcomeMessage();
-		Mockito.verify(view_1, times(1)).getUserInput();
-		
-		Mockito.verify(game_1, times(1)).playerRollDices();
-		Mockito.verify(game_1, times(1)).playerWinsSeven();
+	
+		checkVerifies();
 		Mockito.verify(game_1, times(1)).playerWinsDoubles();
-		
 		Mockito.verify(view_1, times(1)).printResult(game_1.playerWinsSeven());
 		
 		
@@ -113,25 +103,32 @@ public class Controller_tests {
 	@Test
 	public void shouldPlayGameInLosingState() {
 		
+		Mockito.when(view_1.getPlayButton()).thenReturn("p");
+		Mockito.when(view_1.getQuitButton()).thenReturn("q");
 		Mockito.when(view_1.getUserInput()).thenReturn("p");
 		Mockito.when(game_1.getPlayerDiceValues()).thenReturn(8);
 		Mockito.when(game_1.getPlayerDice1Value()).thenReturn(3);
 		Mockito.when(game_1.getPlayerDice2Value()).thenReturn(5);
 		
-		
 		pc_1.playGame();
 		
-
-		Mockito.verify(view_1, times(1)).printWelcomeMessage();
-		Mockito.verify(view_1, times(1)).getUserInput();
-		
-		Mockito.verify(game_1, times(1)).playerRollDices();
-		Mockito.verify(game_1, times(1)).playerWinsSeven();
+		checkVerifies();
 		Mockito.verify(game_1, times(1)).playerWinsDoubles();
-		
 		Mockito.verify(view_1, times(1)).printResult(false);
 		
 		
 	}
 	
+	private void checkVerifies() {
+		Mockito.verify(view_1, times(1)).printWelcomeMessage();
+		Mockito.verify(view_1, times(1)).getUserInput();
+		
+		Mockito.verify(game_1, times(1)).playerRollDices();
+		Mockito.verify(game_1, times(1)).playerWinsSeven();
+	}
+	
+	private void mockWhenUserInput() {
+		Mockito.when(view_1.getUserInput()).thenReturn("p");
+		Mockito.when(game_1.getPlayerDiceValues()).thenReturn(7);
+	}
 }

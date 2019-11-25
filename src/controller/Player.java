@@ -36,7 +36,7 @@ public class Player {
 		printWelcomeMessage();
 		in = getUserInput();
 		
-		if(in.matches("p")) { // Hidden dependancy #1 CHANGE THIS
+		if(in.matches(view_1.getPlayButton())) { // Hidden dependancy #1 CHANGE THIS
 			game_1.playerRollDices();
 			
 			if(game_1.playerWinsSeven()) {
@@ -48,7 +48,7 @@ public class Player {
 			}
 		}
 		
-		if (in.matches("q")) {  // Hidden dependancy #2 CHANGE THIS
+		if (in.matches(view_1.getQuitButton())) {  // Hidden dependancy #2 CHANGE THIS
 			printGoodByeMessage();
 			System.exit(0);
 		} else {

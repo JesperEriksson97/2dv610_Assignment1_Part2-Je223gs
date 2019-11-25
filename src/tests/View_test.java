@@ -109,5 +109,8 @@ class EnglishViewStub implements view.IView {
 	public void printGoodByeMessage() {}
 	public void printResult(boolean b) {}
 	public String getUserInput() {return null;}
+	public String getPlayButton() {return null;}
+	public String getQuitButton() {return null;}
+
 	
 }

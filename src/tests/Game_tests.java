@@ -27,7 +27,7 @@ public class Game_tests {
 	public void checkIfplayerWinSeven() {
 		Mockito.when(player_1.getDiceValues()).thenReturn(7);
 		
-		assertTrue(game_1.playerWinsSeven(player_1));
+		assertTrue(game_1.playerWinsSeven());
 		
 	}
 	
@@ -39,7 +39,7 @@ public class Game_tests {
 		Mockito.when(player_1.getDice1Val()).thenReturn(3);
 		Mockito.when(player_1.getDice2Val()).thenReturn(3);
 		
-		assertTrue(game_1.playerWinsDoubles(player_1));
+		assertTrue(game_1.playerWinsDoubles());
 		
 	}
 	
