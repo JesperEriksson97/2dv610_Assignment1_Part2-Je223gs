@@ -1,8 +1,6 @@
 package tests;
 
 import static org.junit.Assert.assertTrue;
-import static org.mockito.Mockito.times;
-
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -19,7 +17,7 @@ public class Game_tests {
 	@Before
 	public void SetUp() {
 		player_1 = Mockito.mock(model.Player.class);
-		game_1 = new model.Game();
+		game_1 = new model.Game(player_1);
 	}
 	
 	/**
