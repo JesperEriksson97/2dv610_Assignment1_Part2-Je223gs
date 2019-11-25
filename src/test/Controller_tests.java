@@ -119,6 +119,10 @@ public class Controller_tests {
 		
 	}
 	
+	/**
+	 * Verifies that the functions that should be called actually is called. 
+	 */
+	
 	private void checkVerifies() {
 		Mockito.verify(view_1, times(1)).printWelcomeMessage();
 		Mockito.verify(view_1, times(1)).getUserInput();
