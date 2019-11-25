@@ -1,4 +1,4 @@
-package tests;
+package test;
 
 /**
  * Test suite for the Dice class
