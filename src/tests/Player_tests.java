@@ -1,13 +1,8 @@
 package tests;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-import org.junit.Before;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
-
-import model.Dice;
 
 import static org.mockito.Mockito.*;
 
@@ -28,7 +23,7 @@ class Player_tests {
 	}
 	
 	/**
-	 * checking if the dice values changes when rolled. 
+	 * checking if the dice values changes when rolled.
 	 */
 	
 	@Test

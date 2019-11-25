@@ -8,16 +8,16 @@ public class Game {
 		this.player = player;
 	}
 	
-	public boolean playerWinsSeven(model.Player player_1) {
-		if (player_1.getDiceValues() == 7) {
+	public boolean playerWinsSeven() {
+		if (player.getDiceValues() == 7) {
 			return true;
 		} else {
 			return false;
 		}
 	}
 	
-	public boolean playerWinsDoubles(model.Player player_1) {
-		if (player_1.getDice1Val() == player_1.getDice2Val()) {
+	public boolean playerWinsDoubles() {
+		if (player.getDice1Val() == player.getDice2Val()) {
 			return true;
 		} else {
 			return false;
