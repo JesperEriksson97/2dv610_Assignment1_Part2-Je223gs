@@ -1,6 +1,6 @@
 package test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertSame;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -15,10 +15,10 @@ public class Factory_tests {
 	}
 	
 	@Test
-	public void shouldReturnDice() {
+	public void shouldReturnObjectOfTypeDice() {
 		Object actual = factory.createDice();
 		model.Dice expected = new model.Dice();
 		
-		assertEquals(expected, actual);
+		assertSame(expected.getClass(), actual.getClass());
 	}
 }
