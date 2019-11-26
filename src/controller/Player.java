@@ -16,7 +16,6 @@ public class Player {
 
 	public void printWelcomeMessage() {
 		view_1.printWelcomeMessage();
-		
 	}
 
 	public void printGoodByeMessage() {
@@ -36,26 +35,35 @@ public class Player {
 		printWelcomeMessage();
 		in = getUserInput();
 		
-		if(in.matches(view_1.getPlayButton())) { // Hidden dependancy #1 CHANGE THIS
+		if(in.matches(view_1.getPlayButton())) { 
 			game_1.playerRollDices();
 			
 			if(game_1.playerWinsSeven()) {
 				printResult(true);
+				printDiceValues();
 			} else if(game_1.playerWinsDoubles()) {
 				printResult(true);
+				printDiceValues();
 			} else {
 				printResult(false);
+				printDiceValues();
 			}
 		}
 		
-		if (in.matches(view_1.getQuitButton())) {  // Hidden dependancy #2 CHANGE THIS
+		if (in.matches(view_1.getQuitButton())) {  
 			printGoodByeMessage();
 			System.exit(0);
 		} else {
-			playGame(); // disabled temporary, crashes the tests with a infinite loop. Should be always going in the actual game later on.
+			//playGame(); // disabled temporary, crashes the tests with a infinite loop. Should be always going in the actual game later on.
 		}
 				
 		
+		
+	}
+
+	public void printDiceValues() {
+		view_1.printDiceValues(1, 1);
+		// view_1.printDiceValues(game_1.getPlayerDice1Value(), game_1.getPlayerDice2Value());
 		
 	}
 

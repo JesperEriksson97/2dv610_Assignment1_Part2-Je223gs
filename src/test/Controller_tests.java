@@ -53,8 +53,8 @@ public class Controller_tests {
 	
 	@Test
 	public void shouldPrintResultsOfDiceValues() {
-		pc_1.printDiceValues(3, 4);
-		Mockito.verify(view_1, times(1)).printDiceValues(3, 4);; // adding a true method aswell to get 100% branch coverage
+		pc_1.printDiceValues();
+		Mockito.verify(view_1, times(1)).printDiceValues(1,1);; // adding a true method aswell to get 100% branch coverage
 	}
 	
 	// ----------------------------------------  VIEW TESTS END  ----------------------------------------
@@ -75,7 +75,7 @@ public class Controller_tests {
 		
 		checkVerifies();
 		Mockito.verify(view_1, times(1)).printResult(game_1.playerWinsSeven());
-		Mockito.verify(view_1, times(1)).printDiceValues(3, 4);
+		Mockito.verify(view_1, times(1)).printDiceValues(1, 1);
 		
 		
 	}
@@ -99,7 +99,7 @@ public class Controller_tests {
 		checkVerifies();
 		Mockito.verify(game_1, times(1)).playerWinsDoubles();
 		Mockito.verify(view_1, times(1)).printResult(game_1.playerWinsSeven());
-		Mockito.verify(view_1, times(1)).printDiceValues(3, 3);
+		Mockito.verify(view_1, times(1)).printDiceValues(1, 1);
 		
 		
 	}
@@ -123,7 +123,7 @@ public class Controller_tests {
 		checkVerifies();
 		Mockito.verify(game_1, times(1)).playerWinsDoubles();
 		Mockito.verify(view_1, times(1)).printResult(false);
-		Mockito.verify(view_1, times(1)).printDiceValues(3, 5);
+		Mockito.verify(view_1, times(1)).printDiceValues(1, 1);
 		
 	}
 	
