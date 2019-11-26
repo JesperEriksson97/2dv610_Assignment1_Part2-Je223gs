@@ -39,8 +39,8 @@ public class EnglishView implements IView {
 	}
 
 	@Override
-	public void printDiceValues(int i, int j) {
-		// TODO Auto-generated method stub
+	public void printDiceValues(int dice1_val, int dice2_val) {
+		System.out.print("Dice#1: " + dice1_val + " Dice#2: " + dice2_val);
 		
 	}
 
