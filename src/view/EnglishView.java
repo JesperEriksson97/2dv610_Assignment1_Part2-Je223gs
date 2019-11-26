@@ -11,7 +11,6 @@ public class EnglishView implements IView {
 	public String getUserInput() {
 		Scanner inKeyboard = new Scanner(System.in);
 		String input = inKeyboard.nextLine();
-		inKeyboard.close();
 		return input;
 	}
 
@@ -37,6 +36,12 @@ public class EnglishView implements IView {
 
 	public String getQuitButton() {
 		return quitButton;
+	}
+
+	@Override
+	public void printDiceValues(int i, int j) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

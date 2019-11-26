@@ -52,7 +52,7 @@ public class Player {
 			printGoodByeMessage();
 			System.exit(0);
 		} else {
-			// playGame(); // disabled temporary, crashes the tests with a infinite loop. Should be always going in the actual game later on.
+			playGame(); // disabled temporary, crashes the tests with a infinite loop. Should be always going in the actual game later on.
 		}
 				
 		

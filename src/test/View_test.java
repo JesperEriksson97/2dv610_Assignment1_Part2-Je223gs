@@ -76,6 +76,14 @@ public class View_test {
 	}
 	
 	/**
+	 * Checking that the output is the intended one
+	 */
+	@Test
+	public void shouldPrintDiceValues() {
+		view_1.printDiceValues(3, 4);
+		assertEquals("Dice#1: 3 Dice#2: 4", outContent.toString());
+	}
+	/**
 	 * Restoring streams
 	 */
 	@After
@@ -111,6 +119,7 @@ class EnglishViewStub implements view.IView {
 	public String getUserInput() {return null;}
 	public String getPlayButton() {return null;}
 	public String getQuitButton() {return null;}
+	public void printDiceValues(int i, int j) {}
 
 	
 }
