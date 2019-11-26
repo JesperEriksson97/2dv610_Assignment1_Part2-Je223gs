@@ -6,7 +6,6 @@ public class Dice {
 	
 	public void roll() {
 		val = (int) (Math.random()*6+1);
-		System.out.println(val);
 	}
 	
 	public int getVal() {
