@@ -2,7 +2,7 @@ package model;
 
 public class Factory {
 
-	public Object createDice() {
+	public Dice createDice() {
 		model.Dice dice = new model.Dice();
 		return dice;
 	}

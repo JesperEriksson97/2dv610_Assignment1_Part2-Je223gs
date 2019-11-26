@@ -3,6 +3,9 @@ package test;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito.*;
+
+import program.Main;
+
 import org.mockito.Mockito;
 import static org.mockito.Mockito.*;
 
@@ -19,6 +22,7 @@ public class Main_tests {
 	
 	@Test
 	public void startMethodShouldCallplayGame() {
+		Main.startUp(controller);
 		Mockito.verify(controller, times(1)).playGame();
 	}
 	

@@ -16,7 +16,7 @@ public class Factory_tests {
 	
 	@Test
 	public void shouldReturnObjectOfTypeDice() {
-		Object actual = factory.createDice();
+		model.Dice actual = factory.createDice();
 		model.Dice expected = new model.Dice();
 		
 		assertSame(expected.getClass(), actual.getClass());
