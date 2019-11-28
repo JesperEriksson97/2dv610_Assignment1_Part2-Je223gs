@@ -1,5 +1,6 @@
 package test;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import org.junit.Assert;
 import org.junit.Before;
@@ -32,6 +33,17 @@ public class Game_tests {
 	}
 	
 	/**
+	 * test to check if playerWinsSeven() also returns false if the dice values is not seven.
+	 */
+	@Test
+	public void checkIfplayerWinSevenReturnsFalseIfValueIsntSeven() {
+		Mockito.when(player_1.getDiceValues()).thenReturn(6);
+		
+		assertFalse(game_1.playerWinsSeven());
+		
+	}
+	
+	/**
 	 * test to check if player wins when dice values are equal
 	 */
 	@Test
@@ -40,6 +52,18 @@ public class Game_tests {
 		Mockito.when(player_1.getDice2Val()).thenReturn(3);
 		
 		assertTrue(game_1.playerWinsDoubles());
+		
+	}
+	
+	/**
+	 * test to check if player wins when dice values are equal
+	 */
+	@Test
+	public void checkIfplayerWinsDoublesReturnsFalseIfDicesIsNotDoubles() {
+		Mockito.when(player_1.getDice1Val()).thenReturn(3);
+		Mockito.when(player_1.getDice2Val()).thenReturn(6);
+		
+		assertFalse(game_1.playerWinsDoubles());
 		
 	}
 	

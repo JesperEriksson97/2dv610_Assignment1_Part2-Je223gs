@@ -54,7 +54,7 @@ public class Player {
 			printGoodByeMessage();
 			System.exit(0);
 		} else {
-			//playGame(); // disabled temporary, crashes the tests with a infinite loop. Should be always going in the actual game later on.
+			playGame(); //Disable this line when testing or testing will loop infinte. Game is supposed to loop
 		}
 				
 		
@@ -62,8 +62,8 @@ public class Player {
 	}
 
 	public void printDiceValues() {
-		view_1.printDiceValues(1, 1);
-		// view_1.printDiceValues(game_1.getPlayerDice1Value(), game_1.getPlayerDice2Value());
+		// view_1.printDiceValues(1, 1); Enable this line wile testing.
+		view_1.printDiceValues(game_1.getPlayerDice1Value(), game_1.getPlayerDice2Value());
 		
 	}
 

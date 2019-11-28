@@ -12,7 +12,7 @@ public class Game {
 		if (player.getDiceValues() == 7) {
 			return true;
 		} else {
-			return false; // test
+			return false;
 		}
 	}
 	
@@ -20,7 +20,7 @@ public class Game {
 		if (player.getDice1Val() == player.getDice2Val()) {
 			return true;
 		} else {
-			return false; // test
+			return false;
 		}
 	}
 

@@ -24,6 +24,6 @@ public class Player {
 	}
 	
 	public int getDice2Val() {
-		return dice_1.getVal();
+		return dice_2.getVal();
 	}
 }
