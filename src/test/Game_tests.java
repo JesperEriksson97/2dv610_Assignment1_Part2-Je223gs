@@ -78,6 +78,28 @@ public class Game_tests {
 		Assert.assertEquals(12, game_1.getPlayerDiceValues());	
 	}
 	
+	/**
+	 * test if game.getPlayerDice1Value() actually returns player_1.getDice1Val()
+	 */
+	@Test
+	public void rollDice1ShouldReturn3() {
+		Mockito.when(player_1.getDice1Val()).thenReturn(3);
+		game_1.getPlayerDice1Value();
+		
+		Assert.assertEquals(3, game_1.getPlayerDice1Value());	
+	}
+	
+	/**
+	 * test if game.getPlayerDice1Value() actually returns player_1.getDice1Val()
+	 */
+	@Test
+	public void rollDice2ShouldReturn3() {
+		Mockito.when(player_1.getDice2Val()).thenReturn(3);
+		game_1.getPlayerDice2Value();
+		
+		Assert.assertEquals(3, game_1.getPlayerDice2Value());	
+	}
+	
 
 
 }
