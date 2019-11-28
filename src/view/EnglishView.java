@@ -31,11 +31,11 @@ public class EnglishView implements IView {
 	}
 
 	public String getPlayButton() {
-		return playButton;
+		return playButton; // test
 	}
 
 	public String getQuitButton() {
-		return quitButton;
+		return quitButton; // test
 	}
 
 	@Override

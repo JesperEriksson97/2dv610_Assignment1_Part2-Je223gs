@@ -35,6 +35,5 @@ class Player_tests {
 		Mockito.verify(mockDice_2, times(1)).roll();
 		
 	}
-	
 
 }
