@@ -83,6 +83,28 @@ public class View_test {
 		view_1.printDiceValues(3, 4);
 		assertEquals("Dice#1: 3 Dice#2: 4", outContent.toString());
 	}
+	
+	/**
+	 * Checking getter for playButton()
+	 */
+	@Test
+	public void shouldReturnPforPlayButton() {
+		String actual = view_1.getPlayButton();
+		String expected = "p";
+		assertEquals(expected, actual);
+	}
+	
+	/**
+	 * Checking getter for playButton()
+	 */
+	@Test
+	public void shouldReturnQforQuitButton() {
+		String actual = view_1.getQuitButton();
+		String expected = "q";
+		assertEquals(expected, actual);
+	}
+	
+	
 	/**
 	 * Restoring streams
 	 */
